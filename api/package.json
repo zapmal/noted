@@ -1,0 +1,50 @@
+{
+  "name": "Noted-api",
+  "version": "1.0.0",
+  "description": "API for Noted",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon src/index.js",
+    "dev": "nodemon src/index.js",
+    "final": "nodemon final/index.js",
+    "seed": "node final/util/seed/index.js",
+    "lint": "eslint \"src/**/*.js\""
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "**.test.js"
+    ]
+  },
+  "keywords": [],
+  "author": "Zondazx",
+  "license": "MIT",
+  "dependencies": {
+    "apollo-server-express": "2.19.0",
+    "bcrypt": "^5.0.0",
+    "cors": "2.8.5",
+    "dotenv": "8.2.0",
+    "express": "4.17.1",
+    "express-session": "1.17.1",
+    "graphql": "15.4.0",
+    "graphql-depth-limit": "1.1.0",
+    "graphql-iso-date": "3.6.1",
+    "graphql-validation-complexity": "0.4.2",
+    "helmet": "4.2.0",
+    "jsonwebtoken": "8.5.1",
+    "marked": "1.2.3",
+    "md5": "2.3.0",
+    "mongoose": "5.10.13",
+    "nodemon": "2.0.6",
+    "passport": "0.4.1",
+    "passport-github2": "0.1.12",
+    "uuid": "^8.3.1"
+  },
+  "devDependencies": {
+    "eslint": "7.13.0",
+    "eslint-config-prettier": "6.15.0",
+    "eslint-plugin-prettier": "3.1.4",
+    "faker": "5.1.0",
+    "node-fetch": "2.6.1",
+    "prettier": "2.1.2"
+  }
+}
