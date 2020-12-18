@@ -7,9 +7,6 @@
 - generate .env `cp .env.example .env`
 - to start dev server (nodemon) `yarn dev` | `npm run dev`
 
-## Getting Help
-
-[spectrum.chat/jseverywhere](https://spectrum.chat/jseverywhere).
 ## Seed Data
 
 To seed data for local development: `npm run seed`. The password for all of the seeded users is `password`.
