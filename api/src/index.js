@@ -1,49 +1,44 @@
-require('dotenv').config();
 const express = require('express');
+const jwt = require('jsonwebtoken');
 const { ApolloServer } = require('apollo-server-express');
-const typeDefs = require('./schema');
-const models = require('./models');
-const database = require('./database');
+require('dotenv').config();
 
-const resolvers = {
-  Query: {
-    hello: () => 'Hello world!',
-    notes: async () => {
-      return await models.Note.find();
-    },
-    note: async (parent, args) => {
-      return await models.Note.findById(args.id);
-    }
-  },
-  Mutation: {
-    newNote: async (parent, args) => {
-      return await models.Note.create({
-        content: args.content,
-        author: 'Zondazx'
-      });
-    }
-  }
-};
+const models = require('./models');
+const typeDefs = require('./schema');
+const resolvers = require('./resolvers');
+const database = require('./database');
 
 const app = express();
 const port = process.env.PORT || 4000;
 const DB_HOST = process.env.DB_HOST;
+const JWT_SECRET = process.env.JWT_SECRET;
 
 database.connect(DB_HOST);
 
-const server = new ApolloServer({
-  typeDefs,
-  resolvers
+const getAuthenticatedUser = (token) => {
+  if (token) {
+    try {
+      return jwt.verify(token, JWT_SECRET);
+    } catch (error) {
+      throw new Error('Invalid session.');
+    }
+  }
+};
+
+const server = new ApolloServer({ 
+  typeDefs, 
+  resolvers,
+  context: ({ req }) => {
+    const token = req.headers.authorization;
+    const user = getAuthenticatedUser(token);
+    console.log('from index:', user);
+    return { models, user };
+  } 
 });
 
-server.applyMiddleware({
-  app,
-  path: '/api'
-});
+server.applyMiddleware({ app, path: '/api' });
 
-app.listen({
-    port
-  }, () =>
+app.listen({ port }, () =>
   console.log(
     `GraphQL Server running at http://localhost:${port}${server.graphqlPath}`
   )
