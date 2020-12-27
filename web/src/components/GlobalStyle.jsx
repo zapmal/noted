@@ -2,7 +2,6 @@ import { createGlobalStyle } from 'styled-components';
 import normalize from 'normalize.css';
 
 export default createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
 
   *, *:before, *:after {
     box-sizing: border-box;
