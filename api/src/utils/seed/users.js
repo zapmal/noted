@@ -2,7 +2,7 @@
 /* Generates 10 fake users */
 
 const faker = require('faker');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 const gravatar = require('../gravatar');
 
@@ -14,7 +14,7 @@ const seedUsers = async () => {
   for (var i = 0; i < 10; i++) {
     let user = {
       username: faker.internet.userName(),
-      password: await bcrypt.hash('password', 10),
+      password: bcrypt.hashSync('password', 10),
       email: faker.internet.email()
     };
     user.avatar = gravatar(user.email);
