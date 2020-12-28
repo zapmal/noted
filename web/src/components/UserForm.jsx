@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import logo from '../img/logo.svg';
 
 import Button from './Button';
 
 const Wrapper = styled.div`
-  border: 1px solid #f5f4f0;
+  border: 3px solid #f5f4f0;
+  border-radius: 5px;
   max-width: 500px;
   padding: 1em;
   margin: 0 auto;
@@ -35,6 +37,14 @@ const Form = styled.form`
   }
 `;
 
+const Image = styled.img`
+  display: block;
+  margin: 15px auto;
+`;
+
+const MotivationalMessage = styled.p`
+  text-align: center;
+`;
 
 const UserForm = (props) => {
   const [values, setValues] = useState();
@@ -92,6 +102,11 @@ const UserForm = (props) => {
           />
         <Button type='submit'>Submit</Button>
       </Form>
+
+      <Image src={logo} alt='App Logo' height='40'/>
+      <MotivationalMessage>
+        {props.formType === 'signin' ? 'Welcome.' : 'Bring your notes to life.'}
+      </MotivationalMessage>
     </Wrapper>
   );
 };
