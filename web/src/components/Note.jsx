@@ -24,8 +24,6 @@ const UserActions = styled.div`
 `;
 
 const Note = ({ note }) => {
-  {console.log(note.id)}
-
   return (
     <StyledNote>
       <MetaData>
