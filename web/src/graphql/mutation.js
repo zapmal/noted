@@ -12,7 +12,27 @@ const SIGNIN_USER = gql`
   }
 `;
 
+const NEW_NOTE = gql`
+  mutation newNote($content: String!) {
+    newNote(content: $content) {
+      id
+      content
+      createdAt
+      favoriteCount
+      favoritedBy {
+        id
+        username
+      }
+      author {
+        id
+        username
+      }
+    }
+  }
+`;
+
 export {
   SIGNUP_USER,
   SIGNIN_USER,
+  NEW_NOTE,
 };
