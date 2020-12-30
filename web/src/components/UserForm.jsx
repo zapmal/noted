@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import logo from '../img/logo.svg';
+import logo from '../assets/logo.svg';
 
 import Button from './Button';
 
@@ -105,7 +105,7 @@ const UserForm = (props) => {
 
       <Image src={logo} alt='App Logo' height='40'/>
       <MotivationalMessage>
-        {props.formType === 'signin' ? 'Welcome.' : 'Bring your notes to life.'}
+        {props.formType === 'signin' ? 'Welcome, ready for a ride?' : 'Join us and bring your notes to life.'}
       </MotivationalMessage>
     </Wrapper>
   );

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useQuery, useApolloClient } from '@apollo/client';
 import { Link, withRouter } from 'react-router-dom';
 
-import logo from '../img/logo.svg';
+import logo from '../assets/logo.svg';
 import ButtonAsLink from './ButtonAsLink';
 import { isLoggedInVar } from '../cache';
 import { IS_LOGGED_IN } from '../graphql/query';
