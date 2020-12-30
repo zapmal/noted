@@ -4,7 +4,8 @@ import { useQuery, useApolloClient } from '@apollo/client';
 import { Link, withRouter } from 'react-router-dom';
 
 import logo from '../assets/logo.svg';
-import ButtonAsLink from './ButtonAsLink';
+import Button from './Button';
+import LinkAsButton from './LinkAsButton';
 import { isLoggedInVar } from '../cache';
 import { IS_LOGGED_IN } from '../graphql/query';
 
@@ -40,7 +41,7 @@ const Header = (props) => {
       <LogoText>Noted</LogoText>
       <UserState>
         {data.isLoggedIn ? (
-          <ButtonAsLink
+          <Button
             onClick={() => {
               client.cache.gc()
               localStorage.removeItem('token');
@@ -49,11 +50,15 @@ const Header = (props) => {
             }}
           >
             Log out
-          </ButtonAsLink>
+          </Button>
         ) : (
           <p>
-            <Link to={'/signin'}>Sign In</Link> or {' '}
-            <Link to={'/signup'}>Sign Up</Link>
+            <LinkAsButton>
+              <Link to={'/signin'}>Sign In</Link>
+            </LinkAsButton> or {' '}
+            <LinkAsButton>
+              <Link to={'/signup'}>Sign Up</Link>
+            </LinkAsButton>
           </p>
         )}
       </UserState>
