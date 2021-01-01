@@ -34,7 +34,6 @@ function createWindow() {
     `);
   }
 
-
   window.on('closed', () => window = null);
 }
 
