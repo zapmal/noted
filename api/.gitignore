@@ -62,7 +62,3 @@ typings/
 
 # VSCode settings
 .vscode/
-
-# Unnecessary folders for repo
-final
-solutions

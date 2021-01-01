@@ -2,10 +2,9 @@
 
 ## Configuration
 
-- clone the repository `git clone <link to this repo>`
-- to install dependencies `yarn install` | `npm install`
+- install dependencies `yarn install` | `npm install`
 - generate .env `cp .env.example .env`
-- to start dev server (nodemon) `yarn dev` | `npm run dev`
+- to start dev server `yarn dev` | `npm run dev`
 
 ## Seed Data
 
