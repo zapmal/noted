@@ -2,9 +2,10 @@
 
 ## Configuration
 
-- install dependencies `yarn install` | `npm install`
-- generate .env (assumes that you're in src/) `cp .env.example .env`
-- to start dev server `yarn dev` | `npm run dev`
+- Install dependencies `yarn install` | `npm install`
+- Generate .env (assumes that you're in src/) `cp .env.example .env`
+- Start MongoDB server `mongod`.
+- To start dev server `yarn dev` | `npm run dev`
 
 ## Seed Data
 
