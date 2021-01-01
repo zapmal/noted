@@ -3,7 +3,7 @@
 ## Configuration
 
 - install dependencies `yarn install` | `npm install`
-- generate .env `cp .env.example .env`
+- generate .env (assumes that you're in src/) `cp .env.example .env`
 - to start dev server `yarn dev` | `npm run dev`
 
 ## Seed Data
