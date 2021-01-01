@@ -1,11 +1,5 @@
 # Noted
 
-## About the folders
+Each folder contains instructions for configuration, development and production builds.
 
-- `api`
-
-- `web`
-
-- `mobile`
-
-- `desktop`
+To use `desktop`, `web` or `mobile` you need to setup `api` first.
