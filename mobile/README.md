@@ -1,5 +1,7 @@
 # Noted Mobile
 
+Includes most of the web app's functionality.
+
 ## Configuration
 
 > You need to have installed globally expo. If you haven't, just run
