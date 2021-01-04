@@ -4,7 +4,7 @@ Includes most of the web app's functionality.
 
 ## Configuration
 
-> You need to have installed globally expo. If you haven't, just run
+> You need to have expo installed. In case you don't, just run
 `npm i expo-cli -g`, and then create an account in [expo](https://expo.io/) and use it
 in `expo login`.
 
