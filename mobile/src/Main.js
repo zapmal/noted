@@ -7,6 +7,7 @@ import {
 } from '@apollo/client';
 import { setContext } from 'apollo-link-context';
 import * as SecureStore from 'expo-secure-store';
+import Screens from './screens';
 
 import getEnvVars from '../config';
 const { API_URI } = getEnvVars();
