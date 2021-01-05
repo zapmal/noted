@@ -8,6 +8,7 @@ Includes most of the web app's functionality.
 `npm i expo-cli -g`, and then create an account in [expo](https://expo.io/) and use it
 in `expo login`.
 
+- `cp config.example.js config.js`
 - Install dependencies `yarn install | npm install`
 - Run expo `yarn start | npm run start`
 
